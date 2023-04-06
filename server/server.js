@@ -17,7 +17,7 @@ app.use(express.json());
 
 app.get("/", async (req, res) => {
   res.status(200).send({
-    message: "Hello from CodeX",
+    message: "Hello from fun ChatGPT",
   });
 });
 
@@ -27,8 +27,8 @@ app.post("/", async (req, res) => {
 
     const response = await openAI.createCompletion({
       model: "text-davinci-003",
-      prompt: `${prompt}`,
-      temperature: 0,
+      prompt: `Please, give some random jokes in old English Lord of Rings style based on the prompt: ${prompt}. Then finally answer the prompt in Old English Game of Thrones style or a random coding language if it is a coding question`,
+      temperature: 0.5,
       max_tokens: 500,
       top_p: 1,
       frequency_penalty: 0,
